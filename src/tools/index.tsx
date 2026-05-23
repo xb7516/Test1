@@ -154,7 +154,7 @@ export const tools: Tool[] = [
     icon: <Monitor size={18} />,
     category: 'device',
     params: { deviceType: '' },
-    handler: async (params: any) => {
+    handler: async (_params: any) => {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({
@@ -211,7 +211,7 @@ export const tools: Tool[] = [
     icon: <AlertTriangle size={18} />,
     category: 'analysis',
     params: { timeRange: '', severity: '' },
-    handler: async (params: any) => {
+    handler: async (_params: any) => {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({
@@ -236,7 +236,7 @@ export const tools: Tool[] = [
     icon: <FileSpreadsheet size={18} />,
     category: 'report',
     params: { reportType: '', timeRange: '' },
-    handler: async (params: any) => {
+    handler: async (_params: any) => {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({

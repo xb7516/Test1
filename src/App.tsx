@@ -12,7 +12,6 @@ import {
   CheckCircle2, 
   Clock, 
   AlertCircle,
-  ChevronRight,
   Zap,
   Shield,
   Database,
@@ -24,7 +23,7 @@ import { twMerge } from 'tailwind-merge';
 import type { Message, ToolCall } from './types';
 import { AGENT_CONFIG, QUICK_ACTIONS, SCENE_TEMPLATES } from './constants';
 import { tools, getToolById } from './tools';
-import { generateId, formatTime, formatDateTime, extractIntent } from './utils';
+import { generateId, formatTime, extractIntent } from './utils';
 
 function cn(...inputs: any[]) {
   return twMerge(clsx(inputs));
@@ -45,9 +44,9 @@ const App: React.FC = () => {
   const [activeTool, setActiveTool] = useState<string | null>(null);
   const [toolResult, setToolResult] = useState<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [sessions, setSessions] = useState([
+  const sessions = [
     { id: '1', title: '当前对话', isActive: true },
-  ]);
+  ];
 
   useEffect(() => {
     scrollToBottom();
